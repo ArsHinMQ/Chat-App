@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "vazirmatn/Vazirmatn-font-face.css";
+
+
+:root {
+  --primary: #344F6B;
+  --primary-dark: #1E354D;
+  --primary-light: #3B648E;
+  --secondary: #FBCCEB;
+  --background-dark: #223548;
+  --background-light: #EBECEE;
+  --font-light: #EBECEE;
+  --font-dark: #222;
+  --special: #4ADE80;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #344F6B;
+    --primary-dark: #1E354D;
+    --primary-light: #3B648E;
+    --secondary: #FBCCEB;
+    --background-dark: #223548;
+    --background-light: #EBECEE;
+    --font-light: #EBECEE;
+    --font-dark: #222;
+    --special: #4ADE80
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.hidden-scrollbar::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+body, html {
+  color: var(--font-light);
+  background: var(--background-dark);
+  overflow-x: hidden !important;
+}
+
+body, * {
+  font-family: 'Vazirmatn', Roboto, sans-serif !important;
+}
+
+input[type="checkbox"]:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+input[type="email"], input[type="password"], input[type="number"], input[type="tel"], input[type="url"] {
+  direction: ltr !important;
+  text-align: left !important;
+}
