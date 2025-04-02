@@ -1,0 +1,114 @@
+{
+    "appName": "اپلیکیشن چت لوپ",
+    "chat": {
+        "membersIndicator": "عضو",
+        "messageStatus": {
+            "seen": "خوانده شده",
+            "sending": "در حال ارسال",
+            "sent": "ارسال شده"
+        }
+    },
+    "group": {
+        "membersIndicator": "عضو",
+        "explorer": {
+            "privateGroupCodeInputPlaceholder": "کد گروه خصوصی را وارد کنید",
+            "joinGroupButtonShort": "عضو شو",
+            "joinGroupButton": "عضو گروه چت شو",
+            "seeGroupDetails": "جزئیات گروه را ببینید"
+        },
+        "creation": {
+            "pageTitle": "ایجاد گروه جدید",
+            "groupNameInputPlaceholder": "نام گروه...",
+            "groupDescriptionTitle": "توضیحات گروه",
+            "groupDescriptionInputPlaceholder": "توضیحات این گروه را وارد کنید...",
+            "selectCategoriesTitle": "انتخاب دسته بندی ها",
+            "selectCategroiesNote": "حداقل یک و حداکثر سه دسته‌بندی انتخاب کنید",
+            "selectCategoriesInputPlaceholder": "دسته بندی ها را انتخاب کنید..."
+        },
+        "update": {
+            "pageTitle": "ویرایش گروه",
+            "groupNameInputPlaceholder": "نام گروه...",
+            "groupDescriptionTitle": "توضیحات گروه",
+            "groupDescriptionInputPlaceholder": "توضیحات این گروه را وارد کنید...",
+            "selectCategoriesTitle": "انتخاب دسته بندی ها",
+            "selectCategroiesNote": "حداقل یک و حداکثر سه دسته‌بندی انتخاب کنید",
+            "selectCategoriesInputPlaceholder": "دسته بندی ها را انتخاب کنید..."
+        },
+        "info": {
+            "membersSectionTitle": "اعضای گروه",
+            "deleteGroupBtn": "حذف گروه",
+            "deleteGroupModalTitle": "شما در حال حذف این گروه هستید",
+            "deleteGroupModalText": "در صورت حذف این گروه، تمامی اطلاعات آن از بین میرود و این عمل <span class='text-red-400'>قابل بازگشت نیست</span>.",
+            "deleteGroupModalConfirmBtn": "مطمئنم، حذف کن",
+            "deleteGroupModalCancelBtn": "انصراف",
+            "editGroupBtn": "ویرایش گروه",
+            "backToChatBtn": "بازگشت به چت",
+            "groupDescriptionTitle": "توضیحات",
+            "joinGroupBtn": "عضو گروه چت شو",
+            "removeMemberModalTitle": "شما در حال حذف یک عضو هستید",
+            "removeMemberModalText": "شما در حال حذف {MEMBER_NAME} از گروه هستید. این عمل <span class='text-red-400'>قابل بازگشت نیست</span> و پس از حذف، دیگر به این گروه دسترسی نخواهد داشت.",
+            "removeMemberModalConfirmBtn": "مطمئنم، حذف کن",
+            "removeMemberModalCancelBtn": "انصراف"
+        }
+    },
+    "user": {
+        "profile": {
+            "bioTitle": "بیوگرافی",
+            "chatWithUserBtn": "با {USERNAME} چت کن",
+            "sharedGroupsTitle": "گروه های مشترک"
+        },
+        "me": {
+            "usernameInputPlaceholder": "نام کاربری خود را وارد کنید...",
+            "bioTitle": "بیوگرافی",
+            "bioInputPlaceholder": "بیوگرافی خود را وارد کنید...",
+            "idTitle": "شناسه شما",
+            "idText": "شناسه شما منحصر به فرد است و قابل تغییر نیست. می‌توانید آن را با دیگران به اشتراک بگذارید تا به راحتی شما را پیدا کنند.",
+            "emailTitle": "آدرس ایمیل شما",
+            "saveChangesBtn": "ذخیره تغییرات",
+            "changePasswordBtn": "تغییر رمز عبور",
+            "changePasswordAlert": "ایمیلی به {EMAIL} برای تغییر رمز عبور شما ارسال شده است. لطفا صندوق ورودی خود را بررسی کنید."
+        }
+    },
+    "auth": {
+        "forgotPasswordBtn": "رمز عبور خود را فراموش کرده اید؟",
+        "noAccountBtn": "حساب کاربری ندارید؟ ثبت نام کنید",
+        "alreadyHaveAccountBtn": "حساب کاربری دارید؟ وارد شوید",
+        "login": {
+            "pageTitle": "ورود به حساب کاربری",
+            "pageText": "لطفا آدرس ایمیل و پسورد خود را وارد کنید",
+            "emailInputPlaceholder": "ایمیل خود را وارد کنید...",
+            "passwordInputPlaceholder": "رمز عبور خود را وارد کنید...",
+            "invalidCredError": "ایمیل یا رمز عبور نامعتبر است",
+            "loginBtn": "ورود"
+        },
+        "signup": {
+            "pageTitle": "ثبت نام",
+            "enterEmailText": "لطفا آدرس ایمیل خود را وارد کنید",
+            "emailInputPlaceholder": "ایمیل خود را وارد کنید...",
+            "submitEmailBtn": "ثبت و ادامه",
+            "otpCodeText": "کد تایید به ایمیل {EMAIL} ارسال شده است: لطفا کد اراسال شده را وارد کنید.",
+            "otpCodeInputPlaceholder": "کد تایید را وارد کنید...",
+            "verifyBtn": "تایید",
+            "registerText": "لطفا اطلاعات زیر را تکمیل کنید",
+            "usernameInputPlaceholder": "نام کاربری خود را وارد کنید...",
+            "passwordInputPlaceholder": "رمز عبور خود را وارد کنید...",
+            "weakPasswordError": "رمز عبور ضعیف است. دوباره تلاش کنید.",
+            "registerBtn": "ثبت نام"
+        },
+        "forgotPassword": {
+            "pageTitle": "رمز عبور خود را فراموش کرده‌اید؟",
+            "pageText": "لطفا آدرس ایمیل خود را وارد کنید تا لینک تغییر رمز عبور برای شما ارسال شود.",
+            "emailInputPlaceholder": "ایمیل خود را وارد کنید...",
+            "sendEmailBtn": "ارسال ایمیل"
+        },
+        "resetPassword": {
+            "pageTitle": "تغییر رمز عبور",
+            "pageText": "لطفا رمز عبور جدید خود را وارد کنید.",
+            "passwordInputPlaceholder": "رمز عبور جدید را وارد کنید...",
+            "confirmPasswordInputPlaceholder": "تکرار رمز عبور جدید را وارد کنید...",
+            "passwordsDoNotMatchError": "رمز عبور و تکرار آن مطابقت ندارد.",
+            "weakPasswordError": "رمز عبور ضعیف است. دوباره تلاش کنید.",
+            "resetPasswordBtn": "تغییر رمز عبور"
+        }
+    }
+}

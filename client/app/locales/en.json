@@ -1,0 +1,115 @@
+{
+    "appName": "Loop Chat App",
+    "chat": {
+        "membersIndicator": "Members",
+        "messageStatus": {
+            "seen": "seen",
+            "sending": "sending",
+            "sent": "sent"
+        }
+    },
+    "group": {
+        "membersIndicator": "members",
+        "explorer": {
+            "privateGroupCodeInputPlaceholder": "Enter group code",
+            "joinGroupButtonShort": "Join",
+            "joinGroupButton": "Join Group Chat",
+            "seeGroupDetails": "See Group Details"
+        },
+        "creation": {
+            "pageTitle": "Create New Group",
+            "groupNameInputPlaceholder": "Group Name...",
+            "groupDescriptionTitle": "Group Description",
+            "groupDescriptionInputPlaceholder": "Describe this group...",
+            "selectCategoriesTitle": "Select Categories",
+            "selectCategroiesNote": "At least select ONE category, you can select up to THREE categories",
+            "selectCategoriesInputPlaceholder": "Select categories..."
+        },
+        "update": {
+            "pageTitle": "Update Your Group",
+            "groupNameInputPlaceholder": "Group Name...",
+            "groupDescriptionTitle": "Group Description",
+            "groupDescriptionInputPlaceholder": "Describe this group...",
+            "selectCategoriesTitle": "Select Categories",
+            "selectCategroiesNote": "At least select ONE category, you can select up to THREE categories",
+            "selectCategoriesInputPlaceholder": "Select categories..."
+        },
+        "info": {
+            "membersSectionTitle": "Members",
+            "deleteGroupBtn": "Delete Group",
+            "deleteGroupModalTitle": "Are you sure",
+            "deleteGroupModalText": "You're trying to delete this group. This action is <span class='text-red-400'>not reversible</span>. Once deleted, it cannot be undone",
+            "deleteGroupModalConfirmBtn": "I'm Sure, Delete",
+            "deleteGroupModalCancelBtn": "Cancel",
+            "editGroupBtn": "Edit Group",
+            "backToChatBtn": "Back To Chat",
+            "groupDescriptionTitle": "Description",
+            "joinGroupBtn": "Join Group Chat",
+            "removeMemberModalTitle": "Are you sure?",
+            "removeMemberModalText": "You're trying to remove {MEMBER_NAME} from the group. This action is <span class='text-red-400'>not reversible</span>. Once removed, they will no longer have access to this group.",
+            "removeMemberModalConfirmBtn": "I'm Sure, Remove",
+            "removeMemberModalCancelBtn": "Cancel"
+        }
+    },
+    "user": {
+        "profile": {
+            "bioTitle": "Bio",
+            "chatWithUserBtn": "Chat with {USERNAME}",
+            "sharedGroupsTitle": "Shared Groups (With You)"
+        },
+        "me": {
+            "usernameInputPlaceholder": "Enter your username...",
+            "bioTitle": "Bio",
+            "bioInputPlaceholder": "ٍEnter your bio...",
+            "idTitle": "Your ID",
+            "idText": "Your ID is unique and cannot be changed. You can share it with others to let them find you easily.",
+            "emailTitle": "Your Email Address",
+            "saveChangesBtn": "Save Changes",
+            "changePasswordBtn": "Change Password",
+            "changePasswordAlert": "An email has been sent to {EMAIL} to change your password. Please check your inbox."
+        }
+    },
+    "auth": {
+        "forgotPasswordBtn": "Forgot your password?",
+        "noAccountBtn": "Don't have an account? Sign up",
+        "alreadyHaveAccountBtn": "Already have an account? Log in",
+        "login": {
+            "pageTitle": "Login to Your Account",
+            "pageText": "Please enter your email and password",
+            "emailInputPlaceholder": "Enter your email...",
+            "passwordInputPlaceholder": "Enter your password...",
+            "invalidCredError": "Invalid email or password",
+            "loginBtn": "Login"
+        },
+        "signup": {
+            "pageTitle": "Sign Up",
+            "enterEmailText": "Please enter your email address",
+            "emailInputPlaceholder": "Enter your email...",
+            "submitEmailBtn": "Submit and Continue",
+            "otpCodeText": "Verification code has been sent to {EMAIL}: Please enter the code",
+            "otpCodeInputPlaceholder": "Enter verification code...",
+            "invalidOtpError": "Invalid verification code",
+            "verifyBtn": "Verify",
+            "registerText": "Please complete the information below",
+            "usernameInputPlaceholder": "Enter your username...",
+            "passwordInputPlaceholder": "Enter your password...",
+            "weakPasswordError": "Password is weak. Please try again.",
+            "registerBtn": "Register"
+        },
+        "forgotPassword": {
+            "pageTitle": "Forgot Your Password?",
+            "pageText": "Please enter your email address to receive a password reset link.",
+            "emailInputPlaceholder": "Enter your email...",
+            "sendEmailBtn": "Send Email"
+        },
+        "resetPassword": {
+            "pageTitle": "Reset Password",
+            "pageText": "Please enter your new password.",
+            "passwordInputPlaceholder": "Enter new password...",
+            "confirmPasswordInputPlaceholder": "Confirm new password...",
+            "passwordsDoNotMatchError": "Passwords do not match.",
+            "weakPasswordError": "Password is weak. Please try again.",
+            "resetPasswordBtn": "Reset Password"
+        }
+    }
+}
