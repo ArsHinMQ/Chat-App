@@ -1,0 +1,10 @@
+{
+    "signup": {
+        "content": "Welcome to our ChatApp! This is your verification code: {{code}}",
+        "subject": "Welcome to our ChatApp!"
+    },
+    "reset-password": {
+        "content": "This is your reset password code link: {{link}}",
+        "subject": "Reset your password"
+    }
+}
