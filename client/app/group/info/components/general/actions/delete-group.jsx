@@ -1,7 +1,10 @@
 'use client'
-import { useLanguage } from '@/app/provider/language-provider';
+import request from '@/app/request'
+import { useLanguage } from '@/app/provider/language-provider'
 import DeleteIcon from '@mui/icons-material/Delete'
-import { useState } from 'react';
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+
 
 const DeleteModal = ({ isOpen, onClose, onConfirmDelete }) => {
     const { translations } = useLanguage()
@@ -40,6 +43,25 @@ const DeleteModal = ({ isOpen, onClose, onConfirmDelete }) => {
 export default function GroupInfoGeneralActionsDeleteGroup({ groupId }) {
     const { translations } = useLanguage()
     const [modalOpen, setModalOpen] = useState(false)
+
+    const router = useRouter()
+
+    const onConfirmDelete = async () => {
+        const res = await request({
+            route: `/group/${groupId}`,
+            method: 'DELETE',
+            withAuth: true,
+        })
+
+
+        if (!res.success) {
+            throw new Error('Failed to delete group')
+        }
+
+        setModalOpen(false)
+        router.push('/chat')
+
+    }
     return (
         <>
             <button onClick={() => setModalOpen(true)} className="border flex justify-center item-center border-red-400 text-red-400 hover:bg-red-400 hover:text-primary transition rounded-lg py-4 px-5 flex items-center gap-2">
@@ -51,7 +73,7 @@ export default function GroupInfoGeneralActionsDeleteGroup({ groupId }) {
             <DeleteModal
                 isOpen={modalOpen}
                 onClose={() => setModalOpen(false)}
-                onConfirmDelete={() => setModalOpen(false)}
+                onConfirmDelete={onConfirmDelete}
             />
         </>
     )

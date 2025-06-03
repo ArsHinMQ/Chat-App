@@ -1,5 +1,6 @@
 'use client'
 
+import request from '@/app/request'
 import { useLanguage } from '@/app/provider/language-provider'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -15,12 +16,17 @@ export default function UserPassLogin() {
 
     const router = useRouter()
 
-    const submitLogin = () => {
-        if (password !== '1234') {
-            setError(loginTranslations.invalidCredError)
-            return
+    const submitLogin = async () => {
+        const res = await request({
+            route: '/auth/login',
+            method: 'POST',
+            body: { email, password },
+        })
+        if (res.success) {
+            router.push('/chat')
+        } else {
+            setError(res.error.message)
         }
-        router.push('/chat')
     }
 
     return (
