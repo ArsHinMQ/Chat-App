@@ -1,10 +1,11 @@
 'use client'
 import passwordStrengthCheck from "@/app/helper/password-strength-check"
+import request from "@/app/request"
 import { useLanguage } from "@/app/provider/language-provider"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 
-export default function OTPSignupRegisterUser({ email, setError }) {
+export default function OTPSignupRegisterUser({ email, setError, registerToken }) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
@@ -15,15 +16,18 @@ export default function OTPSignupRegisterUser({ email, setError }) {
 
 
     const register = async (event) => {
-        // TODO: Backend logic
         event.preventDefault()
         setError('')
-        if (!passwordStrengthCheck(password)) {
-            setError(signupTranslations.weakPasswordError)
-            return
+        const res = await request({
+            route: '/auth/signup/register',
+            method: 'POST',
+            body: { email, username, password, token: registerToken },
+        })
+        if (res.success) {
+            router.push('/auth/login')
+        } else {
+            setError(res.error.message)
         }
-
-        router.push('/auth/login')
 
     }
 

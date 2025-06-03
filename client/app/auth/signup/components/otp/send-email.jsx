@@ -1,4 +1,5 @@
 'use client'
+import request from "@/app/request"
 import { useLanguage } from "@/app/provider/language-provider"
 
 export default function OTPSignupSendEmail({ email, setEmail, goNextStep, setError }) {
@@ -6,10 +7,19 @@ export default function OTPSignupSendEmail({ email, setEmail, goNextStep, setErr
     const { signup: signupTranslations } = translations.auth
 
     const submitEmail = async (event) => {
-        // TODO: Backend logic
         event.preventDefault()
         setError('')
-        goNextStep()
+        const res = await request({
+            route: '/auth/signup/email',
+            method: 'POST',
+            body: { email },
+            withAuth: false
+        })
+        if (res.success) {
+            goNextStep()
+        } else {
+            setError(res.error.message)
+        }
     }
     
 

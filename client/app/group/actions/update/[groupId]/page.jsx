@@ -1,21 +1,31 @@
 import UpdateGroupPage from '@/app/group/actions/update/components/update-group'
 
-const TEMP_DATA = {
-    currentGroupName: 'Test Group',
-    currentGroupCategories: [
-        {
-            id: 1,
-            name: "Study",
-        },
-        {
-            id: 2,
-            name: "Gaming"
+import request from '@/app/request'
+import { cookies } from 'next/headers'
+
+
+async function getGroupInfo(groupId) {
+    const cookieStore = await cookies()
+    const res = await request({
+        route: `/group/${groupId}`,
+        method: 'GET',
+        withAuth: true,
+        headers: {
+            Cookie: cookieStore.toString()
         }
-    ],
-    currentGroupThumbnail: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png',
-    currentGroupDescription: 'This is a test group description.'
+    })
+    
+    if (!res.success) {
+        throw new Error('Failed to fetch categories')
+    }
+    
+    return res.data
 }
 
-export default function UpdateGroup() {
-    return <UpdateGroupPage currentGroupDescription={TEMP_DATA.currentGroupDescription} currentGroupName={TEMP_DATA.currentGroupName} currentGroupCategories={TEMP_DATA.currentGroupCategories} currentGroupThumbnail={TEMP_DATA.currentGroupThumbnail} />
+
+export default async function UpdateGroup({ params }) {
+    const { groupId } = await params
+    const group = await getGroupInfo(groupId)
+
+    return <UpdateGroupPage currentGroupId={groupId} currentGroupDescription={group.description} currentGroupName={group.name} currentGroupCategories={group.categories} currentGroupThumbnail={group.thumbnailURI} />
 }

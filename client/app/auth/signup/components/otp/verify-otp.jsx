@@ -1,8 +1,9 @@
 'use client'
+import request from "@/app/request"
 import { useLanguage } from "@/app/provider/language-provider"
 import { useState } from "react"
 
-export default function OTPSignupVerifyOTP({ email, goNextStep, setError }) {
+export default function OTPSignupVerifyOTP({ email, goNextStep, setError, setRegisterToken }) {
     const [otp, setOTP] = useState('')
 
     const { translations } = useLanguage()
@@ -12,11 +13,17 @@ export default function OTPSignupVerifyOTP({ email, goNextStep, setError }) {
         // TODO: Backend logic
         event.preventDefault()
         setError('')
-        if (otp === '1234') {
+        const res = await request({
+            route: '/auth/signup/verify',
+            method: 'POST',
+            body: { email, otp },
+        })
+        if (res.success && res.data.registerToken) {
+            setRegisterToken(res.data.registerToken)
             goNextStep()
-            return
+        } else {
+            setError(res.error?.message ?? 'An error occurred')
         }
-        setError('Invalid OTP code')
     }
 
     return (

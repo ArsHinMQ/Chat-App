@@ -1,26 +1,31 @@
+import request from '@/app/request'
 import UserProfilePage from '@/app/user/[userId]/components/index'
+import { cookies } from 'next/headers'
 
-const USER_DATA = {
-    id: 1,
-    username: "Gojo Satoru",
-    thumbnail: 'https://static.beebom.com/wp-content/uploads/2024/04/Gojo-comeback.jpg?w=1168&quality=75',
-    bio: "This is a test user bio.",
-    sharedGroups: [
-        {
-            id: 1,
-            name: "Test Group",
-            thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png'
-        },
-        {
-            id: 2,
-            name: "Another Group",
-            thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png'
+const getUser = async (userId) => {
+
+    const cookieStore = await cookies()
+
+    const res = await request({
+        route: `/user/${userId}`,
+        method: 'GET',
+        withAuth: true,
+        headers: {
+            Cookie: cookieStore.toString()
         }
-    ]
+    })
+
+    if (!res.success) {
+        throw new Error('Failed to get user')
+    }
+
+    return res.data
 }
 
-export default function UserProfile() {
+export default async function UserProfile({ params }) {
+    const { userId } = await params
+    const user = await getUser(userId)
     return (
-        <UserProfilePage user={USER_DATA} />
+        <UserProfilePage user={user} />
     )
 }

@@ -11,9 +11,9 @@
     "group": {
         "membersIndicator": "members",
         "explorer": {
-            "privateGroupCodeInputPlaceholder": "Enter group code",
+            "groupCodeInputPlaceholder": "Enter group code",
             "joinGroupButtonShort": "Join",
-            "joinGroupButton": "Join Group Chat",
+            "groupNotFoundAlertMessage": "Group not found",
             "seeGroupDetails": "See Group Details"
         },
         "creation": {
@@ -45,10 +45,12 @@
             "backToChatBtn": "Back To Chat",
             "groupDescriptionTitle": "Description",
             "joinGroupBtn": "Join Group Chat",
+            "leaveGroupBtn": "Leave Group Chat",
             "removeMemberModalTitle": "Are you sure?",
-            "removeMemberModalText": "You're trying to remove {MEMBER_NAME} from the group. This action is <span class='text-red-400'>not reversible</span>. Once removed, they will no longer have access to this group.",
+            "removeMemberModalText": "You're trying to remove <strong>\"{MEMBER_NAME}\"</strong> from the group. This action is <span class='text-red-400'>not reversible</span>. Once removed, they will no longer have access to this group.",
             "removeMemberModalConfirmBtn": "I'm Sure, Remove",
-            "removeMemberModalCancelBtn": "Cancel"
+            "removeMemberModalCancelBtn": "Cancel",
+            "removeMemberSuccessAlertMessage": "Member removed successfully"
         }
     },
     "user": {
@@ -66,7 +68,8 @@
             "emailTitle": "Your Email Address",
             "saveChangesBtn": "Save Changes",
             "changePasswordBtn": "Change Password",
-            "changePasswordAlert": "An email has been sent to {EMAIL} to change your password. Please check your inbox."
+            "changePasswordAlert": "An email has been sent to {EMAIL} to change your password. Please check your inbox.",
+            "profileSavedAlert": "Changes saved!"
         }
     },
     "auth": {

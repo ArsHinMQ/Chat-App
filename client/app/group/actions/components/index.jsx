@@ -2,19 +2,30 @@
 import findFirstLetter from '@/app/helper/find-first-letter'
 import CheckIcon from '@mui/icons-material/Check'
 import dynamic from 'next/dynamic'
-import categories from '@/app/data/categories'
-const AsyncSelect = dynamic(() => import('react-select/async'), { ssr: false });
 import ThumbnailPicker from '@/app/components/thumbnail-picker'
+import request from '@/app/request'
+
+const AsyncSelect = dynamic(() => import('react-select/async'), { ssr: false })
 
 const MAX_SELECTION = 3
 
-const filterCategories = (inputValue) => {
+const filterCategories = async (inputValue) => {
+    const res = await request({
+        route: '/category',
+        method: 'GET',
+        withAuth: true,
+    })
+    
+    if (!res.success) {
+        return []
+    }
+    
     const categoriesOptions = []
-    for (const cat of categories) {
+    for (const cat of res.data) {
         if (cat.name.toLowerCase().includes(inputValue.toLowerCase())) {
             categoriesOptions.push({
                 label: cat.name,
-                value: cat.id
+                value: cat.key
             })
         }
     }
@@ -28,7 +39,7 @@ const promiseOptions = (inputValue) =>
         }, 1000)
     })
 
-export default function GroupAction({ translations, groupName, setGroupName, selectedCategories, setSelectedCategories, thumbnail, setThumbnail, groupDescription, setGroupDescription }) {
+export default function GroupAction({ translations, groupName, setGroupName, selectedCategories, setSelectedCategories, thumbnail, setThumbnail, groupDescription, setGroupDescription, handleSubmit }) {
 
     const onGroupNameChange = (event) => {
         const newGroupName = event.target.value
@@ -47,7 +58,7 @@ export default function GroupAction({ translations, groupName, setGroupName, sel
         <div className="flex flex-nowrap flex-col w-full justify-center items-center">
             <div className="w-full mb-5 flex items-center justify-between bg-primary py-4 px-5">
                 <div className="text-xl font-semibold text-fontLight">{translations.pageTitle}</div>
-                <button className="px-4 py-2 text-white rounded-md hover:bg-primaryDark transition">
+                <button className="px-4 py-2 text-white rounded-md hover:bg-primaryDark transition" onClick={handleSubmit}>
                     <CheckIcon />
                 </button>
             </div>

@@ -11,6 +11,7 @@ export default function OTPSignup() {
 
     const [email, setEmail] = useState('')
     const [error, setError] = useState('')
+    const [registerToken, setRegisterToken] = useState('')
     const [signupStep, setSignupStep] = useState('email')
 
     const { translations } = useLanguage()
@@ -33,6 +34,7 @@ export default function OTPSignup() {
                 signupStep === 'verify' && (
                     <OTPSignupVerifyOTP
                         email={email}
+                        setRegisterToken={setRegisterToken}
                         goNextStep={() => setSignupStep('register')}
                         setError={setError}
                     />
@@ -42,6 +44,7 @@ export default function OTPSignup() {
                 signupStep === 'register' && (
                     <OTPSignupRegisterUser
                         email={email}
+                        registerToken={registerToken}
                         setError={setError}
                     />
                 )

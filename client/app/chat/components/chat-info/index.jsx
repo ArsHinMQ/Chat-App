@@ -1,9 +1,11 @@
 import { useLanguage } from '@/app/provider/language-provider'
 import MenuOpenIcon from '@mui/icons-material/MenuOpen'
+import InfoIcon from '@mui/icons-material/Info'
+import Link from 'next/link'
+import findFirstLetter from '@/app/helper/find-first-letter'
+import getFilePath from '@/app/helper/get-file-path'
 
-export default function ChatInfo({ sidebarOpen, setSidebarOpen, chatName }) {
-    let firstLetter = chatName.charAt(0).toUpperCase()
-
+export default function ChatInfo({ sidebarOpen, setSidebarOpen, chat }) {
     const { translations } = useLanguage()
 
     return (
@@ -12,12 +14,15 @@ export default function ChatInfo({ sidebarOpen, setSidebarOpen, chatName }) {
                 <MenuOpenIcon fontSize='large' />
             </button>
             <div className='flex items-center'>
-                <div className={`bg-${firstLetter} w-[52px] h-[52px] rounded-full`}></div>
+                <div style={{ backgroundImage: `url(${getFilePath(chat.thumbnailURI)})` }} className={`bg-${findFirstLetter(chat.name)} w-[52px] h-[52px] rounded-full bg-cover bg-center`}></div>
                 <div className="ms-3">
-                    <div className="text-lg">{chatName}</div>
-                    <div className="text-special text-xs">12 {translations.chat.membersIndicator}</div>
+                    <div className="text-lg">{chat.name}</div>
+                    <div className="text-special text-xs">{chat.numberOfMembers} {translations.chat.membersIndicator}</div>
                 </div>
             </div>
+            <Link href={`/group/info/${chat.id}`} className='ms-auto'>
+                <InfoIcon sx={{ fontSize: '1.5rem' }} color='white' />
+            </Link>
         </div>
     )
 }

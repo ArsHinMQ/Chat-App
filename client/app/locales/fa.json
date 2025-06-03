@@ -11,9 +11,9 @@
     "group": {
         "membersIndicator": "عضو",
         "explorer": {
-            "privateGroupCodeInputPlaceholder": "کد گروه خصوصی را وارد کنید",
+            "groupCodeInputPlaceholder": "کد گروه خصوصی را وارد کنید",
             "joinGroupButtonShort": "عضو شو",
-            "joinGroupButton": "عضو گروه چت شو",
+            "groupNotFoundAlertMessage": "گروه یافت نشد",
             "seeGroupDetails": "جزئیات گروه را ببینید"
         },
         "creation": {
@@ -45,10 +45,12 @@
             "backToChatBtn": "بازگشت به چت",
             "groupDescriptionTitle": "توضیحات",
             "joinGroupBtn": "عضو گروه چت شو",
+            "leaveGroupBtn": "از گروه چت خارج شو",
             "removeMemberModalTitle": "شما در حال حذف یک عضو هستید",
-            "removeMemberModalText": "شما در حال حذف {MEMBER_NAME} از گروه هستید. این عمل <span class='text-red-400'>قابل بازگشت نیست</span> و پس از حذف، دیگر به این گروه دسترسی نخواهد داشت.",
+            "removeMemberModalText": "شما در حال حذف <strong>«{MEMBER_NAME}»</strong> از گروه هستید. این عمل <span class='text-red-400'>قابل بازگشت نیست</span> و پس از حذف، دیگر به این گروه دسترسی نخواهد داشت.",
             "removeMemberModalConfirmBtn": "مطمئنم، حذف کن",
-            "removeMemberModalCancelBtn": "انصراف"
+            "removeMemberModalCancelBtn": "انصراف",
+            "removeMemberSuccessAlertMessage": "عضو با موفقیت حذف شد"
         }
     },
     "user": {
@@ -66,7 +68,8 @@
             "emailTitle": "آدرس ایمیل شما",
             "saveChangesBtn": "ذخیره تغییرات",
             "changePasswordBtn": "تغییر رمز عبور",
-            "changePasswordAlert": "ایمیلی به {EMAIL} برای تغییر رمز عبور شما ارسال شده است. لطفا صندوق ورودی خود را بررسی کنید."
+            "changePasswordAlert": "ایمیلی به {EMAIL} برای تغییر رمز عبور شما ارسال شده است. لطفا صندوق ورودی خود را بررسی کنید.",
+            "profileSavedAlert": "تغییرات ذخیره شد!"
         }
     },
     "auth": {
